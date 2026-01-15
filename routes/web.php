@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AbsenceController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,4 +19,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/absences', [AbsenceController::class, 'index'])->name('absences.index');
+    Route::get('/affichage', [AbsenceController::class, 'affichage'])->name('affichage.index');
+});
 require __DIR__.'/auth.php';

@@ -1,13 +1,10 @@
   <header>
-            <div class="header-left">
+            <div class=" header-left">
                 <div class="logo-header" id="logoHeader">
                     <div class="logo-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <div class="header-title">
-                        <h1>Tableau de Bord</h1>
-                        <p>Institut International de Technologie</p>
-                    </div>
+               
                 </div>
                 <div class="date-display">
                     <i class="fas fa-calendar-alt"></i>
