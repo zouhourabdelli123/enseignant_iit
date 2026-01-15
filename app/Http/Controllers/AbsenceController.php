@@ -18,4 +18,8 @@ class AbsenceController extends Controller
     {
         return view('admin.demande');
     }
+              public function suivi_demande()
+    {
+        return view('admin.suivi_demande');
+    }
 }

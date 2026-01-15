@@ -23,6 +23,7 @@ route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/absences', [AbsenceController::class, 'index'])->name('absences.index');
     Route::get('/affichage', [AbsenceController::class, 'affichage'])->name('affichage.index');
     Route::get('/demande', [AbsenceController::class, 'demande'])->name('demande.index');
+    Route::get('/suivi_demande', [AbsenceController::class, 'suivi_demande'])->name('suivi_demande.index');
 
 });
 require __DIR__.'/auth.php';
