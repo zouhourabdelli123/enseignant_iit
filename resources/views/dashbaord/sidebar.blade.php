@@ -21,10 +21,9 @@
             <p class="nav-title">Navigation Principale</p>
             <ul class="nav-links">
                 <li><a href="{{ route('absences.index') }}" class="active"><i class="fas fa-home"></i> Gestion des Absences</a></li>
-                <li><a href="#"><i class="fas fa-calendar-alt"></i> Emploi du Temps</a></li>
+                <li><a href="{{ route('demande.index') }}"><i class="fas fa-calendar-alt" ></i> Gestion des demandes</a></li>
                 <li><a href="#"><i class="fas fa-book-open"></i> Mes Cours</a></li>
                 <li><a href="#"><i class="fas fa-tasks"></i> Tâches & Devoirs</a></li>
-                <li><a href="#"><i class="fas fa-chart-line"></i> Statistiques</a></li>
             </ul>
 
             <p class="nav-title" style="margin-top: 1.5rem;">Gestion</p>

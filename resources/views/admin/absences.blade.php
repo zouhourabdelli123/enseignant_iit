@@ -257,4 +257,6 @@
             </form>
         </div>
     </div>
+    <script src="{{ asset('js/script_abcences.js') }}" ></script>
+
 @endsection

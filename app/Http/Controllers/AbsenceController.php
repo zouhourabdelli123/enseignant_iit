@@ -14,4 +14,8 @@ class AbsenceController extends Controller
     {
         return view('admin.index');
     }
+          public function demande()
+    {
+        return view('admin.demande');
+    }
 }
