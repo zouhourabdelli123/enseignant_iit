@@ -60,7 +60,12 @@
 
         <ul class="nav-links">
             <li><a href="#"><i class="fas fa-chart-line"></i> Évaluations</a></li>
-            <li><a href="#"><i class="fas fa-comment-dots"></i> Messagerie</a></li>
+            <li>
+                <a href="{{ route('message.index') }}" class="{{ request()->routeIs('message.*') ? 'active' : '' }}">
+                    <i class="fas fa-comment-dots"></i>
+                    <span>Messagerie</span>
+                </a>
+            </li>
             <li><a href="#"><i class="fas fa-folder-open"></i> Ressources</a></li>
             <li><a href="#"><i class="fas fa-sliders-h"></i> Paramètres</a></li>
         </ul>

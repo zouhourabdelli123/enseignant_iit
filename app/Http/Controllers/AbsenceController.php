@@ -10,15 +10,15 @@ class AbsenceController extends Controller
     {
         return view('admin.absences');
     }
-       public function affichage()
+    public function affichage()
     {
         return view('admin.index');
     }
-          public function demande()
+    public function demande()
     {
         return view('admin.demande');
     }
-              public function suivi_demande()
+    public function suivi_demande()
     {
         return view('admin.suivi_demande');
     }
@@ -26,8 +26,13 @@ class AbsenceController extends Controller
     {
         return view('admin.notes');
     }
-        public function index_notes()
+    public function index_notes()
     {
         return view('admin.notes_index');
+    }
+
+    public function message()
+    {
+        return view('admin.message');
     }
 }

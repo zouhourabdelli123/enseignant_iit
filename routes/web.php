@@ -26,6 +26,7 @@ route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/suivi_demande', [AbsenceController::class, 'suivi_demande'])->name('suivi_demande.index');
     Route::get('/notes', [AbsenceController::class, 'notes'])->name('notes.index');
     Route::get('/index_notes', [AbsenceController::class, 'index_notes'])->name('index_notes.index');
+    Route::get('/message', [AbsenceController::class, 'message'])->name('message.index');
 
 });
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
