@@ -26,45 +26,43 @@
 
         <ul class="nav-links">
             <li>
-                <a href="{{ route('absences.index') }}"
-                   class="{{ request()->routeIs('absences.*') ? 'active' : '' }}">
-                    <i class="fas fa-home"></i>
+                <a href="{{ route('absences.index') }}" class="{{ request()->routeIs('absences.*') ? 'active' : '' }}">
+                    <i class="fas fa-user-clock"></i>
                     <span>Gestion des Absences</span>
                 </a>
             </li>
 
             <li>
-                <a href="{{ route('demande.index') }}"
-                   class="{{ request()->routeIs('demande.*') ? 'active' : '' }}">
-                    <i class="fas fa-calendar-alt"></i>
+                <a href="{{ route('demande.index') }}" class="{{ request()->routeIs('demande.*') ? 'active' : '' }}">
+                    <i class="fas fa-file-signature"></i>
                     <span>Gestion des demandes</span>
                 </a>
             </li>
 
             <li>
                 <a href="{{ route('suivi_demande.index') }}"
-                   class="{{ request()->routeIs('cours.*') ? 'active' : '' }}">
-                    <i class="fas fa-book-open"></i>
+                    class="{{ request()->routeIs('suivi_demande.*') ? 'active' : '' }}">
+                    <i class="fas fa-tasks"></i>
                     <span>Suivi demande</span>
                 </a>
             </li>
 
             <li>
-                <a href="#">
-                    <i class="fas fa-tasks"></i>
-                    <span>Tâches & Devoirs</span>
+                <a href="{{ route('notes.index') }}" class="{{ request()->routeIs('notes.*') ? 'active' : '' }}">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Notes</span>
                 </a>
             </li>
+
         </ul>
 
         <p class="nav-title">Gestion</p>
 
         <ul class="nav-links">
-            <li><a href="#"><i class="fas fa-users"></i> Étudiants</a></li>
-            <li><a href="#"><i class="fas fa-file-alt"></i> Évaluations</a></li>
-            <li><a href="#"><i class="fas fa-envelope"></i> Messagerie</a></li>
-            <li><a href="#"><i class="fas fa-cloud-upload-alt"></i> Ressources</a></li>
-            <li><a href="#"><i class="fas fa-cog"></i> Paramètres</a></li>
+            <li><a href="#"><i class="fas fa-chart-line"></i> Évaluations</a></li>
+            <li><a href="#"><i class="fas fa-comment-dots"></i> Messagerie</a></li>
+            <li><a href="#"><i class="fas fa-folder-open"></i> Ressources</a></li>
+            <li><a href="#"><i class="fas fa-sliders-h"></i> Paramètres</a></li>
         </ul>
     </div>
 

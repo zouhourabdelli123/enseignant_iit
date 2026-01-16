@@ -1,5 +1,8 @@
   <header>
             <div class=" header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <div class="logo-header" id="logoHeader">
                     <div class="logo-icon">
                         <i class="fas fa-graduation-cap"></i>

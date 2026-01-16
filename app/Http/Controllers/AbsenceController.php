@@ -22,4 +22,12 @@ class AbsenceController extends Controller
     {
         return view('admin.suivi_demande');
     }
+    public function notes()
+    {
+        return view('admin.notes');
+    }
+        public function index_notes()
+    {
+        return view('admin.notes_index');
+    }
 }

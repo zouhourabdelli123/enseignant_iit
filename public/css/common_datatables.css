@@ -1,0 +1,607 @@
+/* ====================================
+   FICHIER CSS UNIFIÉ - TOUTES LES PAGES
+   Consolidation de dashboard_index.css, notes_index.css, suivi_demande.css
+   ==================================== */
+
+/* ====================================
+   CARTES DE TABLE (Tables communes)
+   ==================================== */
+.table-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eef2f6;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.table-card-header, .table-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #0c5eb1;
+    margin: 0;
+}
+
+.table-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.table-wrapper {
+    padding: 0 2rem;
+    overflow-x: auto;
+}
+
+/* ====================================
+   DATATABLES - STYLES GÉNÉRAUX
+   ==================================== */
+table.dataTable {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    width: 100% !important;
+    border: none !important;
+}
+
+table.dataTable thead th {
+    background-color: #f8f9fa !important;
+    color: #6c757d !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #eef2f6 !important;
+    padding: 1rem !important;
+}
+
+table.dataTable tbody td {
+    padding: 1rem !important;
+    vertical-align: middle;
+    border-bottom: 1px solid #f8f9fa !important;
+    color: #343a40;
+    font-size: 0.9rem;
+}
+
+table.dataTable tbody tr {
+    transition: all 0.2s ease;
+}
+
+table.dataTable tbody tr:hover {
+    background-color: #fafdff !important;
+}
+
+/* Tables spécifiques */
+#notesTable, #attendanceTable, #suiviTable {
+    width: 100% !important;
+}
+
+/* Pagination DataTables */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #0c5eb1 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover:not(.current) {
+    background: #e6f2ff !important;
+    color: #0c5eb1 !important;
+    border: none !important;
+    border-radius: 50px !important;
+}
+
+.dataTables_wrapper .dataTables_length select,
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #eef2f6;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+.dataTables_wrapper .dataTables_filter input:focus {
+    outline: none;
+    border-color: #0c5eb1;
+}
+
+/* ====================================
+   BADGES DE STATUT
+   ==================================== */
+.status-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.status-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+/* Variantes de badges */
+.status-present, .status-badge.present {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.status-present::before, .status-badge.present::before {
+    background-color: #28a745;
+}
+
+.status-absent, .status-badge.absent {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+.status-absent::before, .status-badge.absent::before {
+    background-color: #dc3545;
+}
+
+.status-late, .status-badge.justified {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+}
+
+.status-late::before, .status-badge.justified::before {
+    background-color: #ffc107;
+}
+
+.status-badge.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-badge.completed {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+/* ====================================
+   EN-TÊTES DE PAGE
+   ==================================== */
+.header-section {
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    color: #718096;
+    margin: 0.5rem 0 0 0;
+    font-size: 0.95rem;
+}
+
+.header-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* ====================================
+   CARTES DE SESSION (Dashboard)
+   ==================================== */
+.session-info-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eef2f6;
+    position: relative;
+    overflow: hidden;
+}
+
+.session-info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #0c5eb1 0%, #3e7eb3 100%);
+}
+
+.session-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.session-icon-wrapper {
+    background: linear-gradient(135deg, #e6f2ff 0%, #f0f7ff 100%);
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0c5eb1;
+    box-shadow: 0 4px 12px rgba(12, 94, 177, 0.15);
+}
+
+.session-content {
+    flex: 1;
+}
+
+.session-type-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #e6f2ff;
+    color: #0c5eb1;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.session-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+}
+
+.session-subtitle {
+    color: #64748b;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.session-badge {
+    background: #1a202c;
+    color: white;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.session-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.detail-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #f8fafc;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.detail-label {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.detail-value {
+    color: #1a202c;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* ====================================
+   GRILLES DE STATISTIQUES
+   ==================================== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon-bg, .stat-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-right: 1.25rem;
+    flex-shrink: 0;
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #1a202c;
+}
+
+/* Variantes de cartes stats */
+.total-card .stat-icon-bg, .total-card .stat-icon {
+    background: #e6f2ff;
+    color: #0c5eb1;
+}
+
+.total-card .stat-value {
+    color: #0c5eb1;
+}
+
+.success-card .stat-icon-bg, .success-card .stat-icon {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.success-card .stat-value {
+    color: #28a745;
+}
+
+.danger-card .stat-icon-bg, .danger-card .stat-icon {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+.danger-card .stat-value {
+    color: #dc3545;
+}
+
+.warning-card .stat-icon-bg, .warning-card .stat-icon {
+    background: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+}
+
+.warning-card .stat-value {
+    color: #d9a406;
+}
+
+.stat-icon.blue {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.stat-icon.green {
+    background: linear-gradient(135deg, #0cebeb 0%, #20e3b2 100%);
+    color: white;
+}
+
+.stat-icon.purple {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+/* ====================================
+   INPUTS ET BADGES (Notes)
+   ==================================== */
+.note-input {
+    width: 90px;
+    padding: 0.625rem 0.875rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f7fafc;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1a202c;
+    transition: all 0.2s ease;
+}
+
+.note-input:focus {
+    outline: none;
+    border-color: #0c5eb1;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(12, 94, 177, 0.1);
+}
+
+.note-input:hover {
+    border-color: #cbd5e0;
+}
+
+.code-badge {
+    background: #eef2f6;
+    color: #0c5eb1;
+    padding: 0.375rem 0.875rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    font-family: 'Courier New', monospace;
+}
+
+.student-name {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.eval-badge {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.375rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* ====================================
+   ZONE DE VALIDATION
+   ==================================== */
+.validation-area {
+    padding: 1.5rem 2rem;
+    background: #fafbfc;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ====================================
+   BOUTONS
+   ==================================== */
+.btn {
+    padding: 0.75rem 1.75rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0c5eb1 0%, #0a4b8f 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(12, 94, 177, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(12, 94, 177, 0.3);
+}
+
+.btn-secondary {
+    background: white;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+}
+
+.btn-secondary:hover {
+    background: #f7fafc;
+    border-color: #cbd5e0;
+}
+
+.btn-outline {
+    background: white;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+    padding: 0.625rem 1.25rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-outline:hover {
+    background: #f7fafc;
+    border-color: #cbd5e0;
+}
+
+.btn-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background: white;
+    color: #718096;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+    background: #f7fafc;
+    color: #0c5eb1;
+    border-color: #cbd5e0;
+}
+
+/* ====================================
+   RESPONSIVE
+   ==================================== */
+@media (max-width: 768px) {
+    .page-container {
+        padding: 1rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .table-header, .table-card-header {
+        padding: 1rem;
+    }
+
+    .table-wrapper {
+        padding: 0 1rem;
+    }
+
+    .validation-area {
+        padding: 1rem;
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

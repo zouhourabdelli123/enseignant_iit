@@ -22,18 +22,15 @@
             --danger-light: rgba(220, 53, 69, 0.1);
             --info: #17a2b8;
 
-            /* Ombres Douces améliorées */
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
             --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
             --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
             --shadow-blue: 0 4px 12px rgba(8, 84, 160, 0.15);
 
-            /* Bordures Douces */
             --border-radius: 16px;
             --border-radius-sm: 10px;
             --border-radius-pill: 50px;
 
-            /* Transitions Lentes améliorées */
             --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
@@ -99,6 +96,41 @@
             align-items: center;
             gap: 1.5rem;
         }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            display: none;
+            width: 46px;
+            height: 46px;
+            border-radius: var(--border-radius-sm);
+            background-color: var(--soft-gray);
+            border: 1px solid transparent;
+            color: var(--text-gray);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition-bounce);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-toggle:hover {
+            background-color: var(--white);
+            color: var(--accent-blue);
+            border-color: var(--light-blue);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .menu-toggle.active {
+            background: var(--gradient-blue);
+            color: white;
+            box-shadow: var(--shadow-blue);
+        }
+
+        .menu-toggle.active i {
+            transform: rotate(90deg);
+        }
+
 
         .logo-header {
             display: flex;
@@ -1359,17 +1391,24 @@
                     "footer";
             }
 
+            /* Show menu toggle button */
+            .menu-toggle {
+                display: flex;
+            }
+
             .sidebar {
                 padding: 1rem 0;
                 max-height: 70px;
                 overflow: hidden;
-                transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
                 border-right: none;
                 border-bottom: 1px solid var(--light-gray);
             }
 
             .sidebar.active {
-                max-height: 600px;
+                max-height: 800px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                border-bottom: 2px solid var(--accent-blue);
             }
 
             .nav-container {

@@ -1,0 +1,102 @@
+/* Configuration Globale */
+:root {
+    --primary-color: #0c5eb1;
+    --primary-light: #e6f2ff;
+    --text-dark: #1a202c;
+    --text-muted: #64748b;
+    --border-color: #eef2f6;
+    --bg-hover: #f8fafc;
+    --radius-lg: 16px;
+}
+
+/* Table Card Container */
+.table-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.table-card-header, .table-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* DataTables Styling */
+table.dataTable {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    width: 100% !important;
+    border: none !important;
+}
+
+table.dataTable thead th {
+    background-color: var(--bg-hover) !important;
+    color: var(--text-muted) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--border-color) !important;
+    padding: 1rem !important;
+}
+
+table.dataTable tbody td {
+    padding: 1rem !important;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border-color) !important;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}
+
+table.dataTable tbody tr:hover {
+    background-color: var(--bg-hover) !important;
+}
+
+/* Pagination Customization */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: var(--primary-light) !important;
+    color: var(--primary-color) !important;
+    border: none !important;
+    border-radius: 50px !important;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-transform: uppercase;
+}
+
+.status-badge.completed {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.status-badge.pending {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #d9a406;
+}

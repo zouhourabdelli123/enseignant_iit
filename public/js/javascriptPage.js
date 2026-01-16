@@ -191,14 +191,38 @@
             updateNextCourseTimer();
             setInterval(updateNextCourseTimer, 60000);
 
-            // Sidebar responsive améliorée
+            // Sidebar responsive améliorée avec bouton toggle
             const sidebar = document.getElementById('sidebar');
-            if (window.innerWidth <= 1024) {
-                sidebar.addEventListener('click', function(e) {
-                    if (e.target.closest('a') || e.target.tagName === 'A') return;
-                    this.classList.toggle('active');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            // Fonction pour toggler la sidebar
+            function toggleSidebar() {
+                sidebar.classList.toggle('active');
+                if (menuToggle) {
+                    menuToggle.classList.toggle('active');
+                }
+            }
+
+            // Événement sur le bouton toggle
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleSidebar();
                 });
             }
+
+            // Sur mobile/tablet: click sur la sidebar (garde le comportement existant)
+            if (window.innerWidth <= 1024) {
+                sidebar.addEventListener('click', function(e) {
+                    // Ne pas fermer si on clique sur un lien
+                    if (e.target.closest('a') || e.target.tagName === 'A') return;
+                    // Ne pas fermer si on clique sur le toggle button
+                    if (e.target.closest('#menuToggle')) return;
+                    
+                    toggleSidebar();
+                });
+            }
+
 
             // Mettre à jour l'heure toutes les secondes
             setInterval(updateDateTime, 1000);

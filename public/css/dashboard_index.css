@@ -1,0 +1,363 @@
+/* ====================================
+   DASHBOARD - PAGE D'ACCUEIL
+   ==================================== */
+
+/* Design DataTables Amélioré */
+.table-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eef2f6;
+    margin-bottom: 2rem;
+}
+
+.table-card-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.table-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0c5eb1;
+    margin: 0;
+}
+
+/* Style du tableau */
+table.dataTable {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    width: 100% !important;
+    border: none !important;
+}
+
+table.dataTable thead th {
+    background-color: #f8f9fa !important;
+    color: #6c757d !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #eef2f6 !important;
+    padding: 1rem !important;
+}
+
+table.dataTable tbody td {
+    padding: 1rem !important;
+    vertical-align: middle;
+    border-bottom: 1px solid #f8f9fa !important;
+    color: #343a40;
+    font-size: 0.9rem;
+}
+
+table.dataTable tbody tr:hover {
+    background-color: #fafdff !important;
+}
+
+    .table-wrapper {
+        padding: 0 2rem;
+        overflow-x: auto;
+    }
+
+    #notesTable {
+        width: 100% !important;
+    }
+
+    #notesTable thead th {
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        color: #718096;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        border-bottom: 2px solid #f0f0f0;
+        padding: 1.25rem 0.75rem;
+        background: #fafbfc;
+    }
+
+    #notesTable tbody tr {
+        transition: all 0.2s ease;
+    }
+
+    #notesTable tbody tr:hover {
+        background: #f8fafc;
+    }
+
+    #notesTable tbody td {
+        padding: 1.25rem 0.75rem;
+        vertical-align: middle;
+        border-bottom: 1px solid #f0f0f0;
+    }
+/* Badges de statut */
+.status-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.status-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.status-present {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.status-present::before {
+    background-color: #28a745;
+}
+
+.status-absent {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+.status-absent::before {
+    background-color: #dc3545;
+}
+
+.status-late {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+}
+
+.status-late::before {
+    background-color: #ffc107;
+}
+
+/* Pagination DataTables Custom */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #0c5eb1 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: #e6f2ff !important;
+    color: #0c5eb1 !important;
+    border: none !important;
+    border-radius: 50px !important;
+}
+
+/* Session Info Card Améliorée */
+.session-info-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eef2f6;
+    position: relative;
+    overflow: hidden;
+}
+
+.session-info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #0c5eb1 0%, #3e7eb3 100%);
+}
+
+.session-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.session-icon-wrapper {
+    background: linear-gradient(135deg, #e6f2ff 0%, #f0f7ff 100%);
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0c5eb1;
+    box-shadow: 0 4px 12px rgba(12, 94, 177, 0.15);
+}
+
+.session-content {
+    flex: 1;
+}
+
+.session-type-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #e6f2ff;
+    color: #0c5eb1;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.session-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+}
+
+.session-subtitle {
+    color: #64748b;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.session-badge {
+    background: #1a202c;
+    color: white;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.session-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.detail-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #f8fafc;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.detail-label {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.detail-value {
+    color: #1a202c;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Stats Grid Amélioré */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon-bg {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-right: 1.25rem;
+    flex-shrink: 0;
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Variantes de cartes stats */
+.total-card .stat-icon-bg {
+    background: #e6f2ff;
+    color: #0c5eb1;
+}
+
+.total-card .stat-value {
+    color: #0c5eb1;
+}
+
+.success-card .stat-icon-bg {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.success-card .stat-value {
+    color: #28a745;
+}
+
+.danger-card .stat-icon-bg {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+.danger-card .stat-value {
+    color: #dc3545;
+}
+
+.warning-card .stat-icon-bg {
+    background: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+}
+
+.warning-card .stat-value {
+    color: #d9a406;
+}

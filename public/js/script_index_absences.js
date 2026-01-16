@@ -1,19 +1,19 @@
 const studentsData = [
-    {id: 1, avatar: 'https://i.pravatar.cc/150?img=1', firstName: 'Mohamed', lastName: 'YOUSSEF', number: '2048', status: 'present', presences: 3, absences: 0, justified: 0},
-    {id: 2, avatar: 'https://i.pravatar.cc/150?img=2', firstName: 'Ahmed', lastName: 'LEYOUB', number: '14545', status: 'present', presences: 2, absences: 1, justified: 0},
-   
+    { id: 1, avatar: 'https://i.pravatar.cc/150?img=1', firstName: 'Mohamed', lastName: 'YOUSSEF', number: '2048', status: 'present', presences: 3, absences: 0, justified: 0 },
+    { id: 2, avatar: 'https://i.pravatar.cc/150?img=2', firstName: 'Ahmed', lastName: 'LEYOUB', number: '14545', status: 'present', presences: 2, absences: 1, justified: 0 },
+
 ];
 
 
-$(document).ready(function() {
+$(document).ready(function () {
     const table = $('#attendanceTable').DataTable({
         data: studentsData,
         columns: [
             { data: 'id' },
-            { 
+            {
                 data: null,
                 orderable: false,
-                render: function(data) {
+                render: function (data) {
                     return `
                         <div class="student-cell">
                             <img src="${data.avatar}" alt="${data.firstName}" class="student-avatar">
@@ -27,14 +27,14 @@ $(document).ready(function() {
             { data: 'number' },
             {
                 data: 'status',
-                render: function(data) {
+                render: function (data) {
                     const statusMap = {
-                        'present': { label: 'Présent', class: 'present' },
-                        'absent': { label: 'Absent', class: 'absent' },
-                        'justified': { label: 'Justifié', class: 'justified' }
+                        'present': { label: 'Présent', class: 'status-present' },
+                        'absent': { label: 'Absent', class: 'status-absent' },
+                        'justified': { label: 'Justifié', class: 'status-late' }
                     };
-                    const status = statusMap[data];
-                    return `<span class="status-badge ${status.class}"><span class="status-dot"></span>${status.label}</span>`;
+                    const status = statusMap[data] || { label: data, class: '' };
+                    return `<span class="status-badge ${status.class}">${status.label}</span>`;
                 }
             },
             { data: 'presences' },
@@ -43,7 +43,7 @@ $(document).ready(function() {
             {
                 data: null,
                 orderable: false,
-                render: function(data, type, row) {
+                render: function (data, type, row) {
                     return `
                         <div class="action-buttons">
                             <button class="btn-action btn-present" onclick="markStatus(${row.id}, 'present')" title="Présent">
@@ -86,7 +86,7 @@ $(document).ready(function() {
         pageLength: 10,
         lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "Tous"]],
         order: [[0, 'asc']],
-        drawCallback: function() {
+        drawCallback: function () {
             updateStats();
         }
     });
@@ -94,13 +94,13 @@ $(document).ready(function() {
     function updateStats() {
         const data = table.rows().data();
         let present = 0, absent = 0, justified = 0;
-        
-        data.each(function(student) {
-            if(student.status === 'present') present++;
-            else if(student.status === 'absent') absent++;
-            else if(student.status === 'justified') justified++;
+
+        data.each(function (student) {
+            if (student.status === 'present') present++;
+            else if (student.status === 'absent') absent++;
+            else if (student.status === 'justified') justified++;
         });
-        
+
         $('#presentCount').text(present);
         $('#absentCount').text(absent);
         $('#justifiedCount').text(justified);
@@ -113,18 +113,18 @@ function markStatus(id, newStatus) {
     const table = $('#attendanceTable').DataTable();
     const rowData = table.rows().data().toArray();
     const studentIndex = rowData.findIndex(s => s.id === id);
-    
-    if(studentIndex !== -1) {
+
+    if (studentIndex !== -1) {
         rowData[studentIndex].status = newStatus;
-        
-        if(newStatus === 'present') {
+
+        if (newStatus === 'present') {
             rowData[studentIndex].presences++;
-        } else if(newStatus === 'absent') {
+        } else if (newStatus === 'absent') {
             rowData[studentIndex].absences++;
-        } else if(newStatus === 'justified') {
+        } else if (newStatus === 'justified') {
             rowData[studentIndex].justified++;
         }
-        
+
         table.clear().rows.add(rowData).draw();
     }
 }
