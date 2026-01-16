@@ -6,7 +6,7 @@
 
     <div class="page-container" >
         <div class="chat-container">
-            <!-- Sidebar - Liste des conversations -->
+            <!-- Sidebar - Liste des  -->
             <div class="chat-sidebar">
                 <div class="chat-sidebar-header">
                     <h3>Messages</h3>

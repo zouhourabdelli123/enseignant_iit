@@ -35,4 +35,14 @@ class AbsenceController extends Controller
     {
         return view('admin.message');
     }
+
+    public function documents()
+    {
+        return view('admin.documents');
+    }
+
+    public function add_document()
+    {
+        return view('admin.add_document');
+    }
 }

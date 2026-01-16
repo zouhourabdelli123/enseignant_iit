@@ -66,7 +66,13 @@
                     <span>Messagerie</span>
                 </a>
             </li>
-            <li><a href="#"><i class="fas fa-folder-open"></i> Ressources</a></li>
+            <li>
+                <a href="{{ route('documents.index') }}"
+                    class="{{ request()->routeIs('documents.*') ? 'active' : '' }}">
+                    <i class="fas fa-folder-open"></i>
+                    <span>Documents</span>
+                </a>
+            </li>
             <li><a href="#"><i class="fas fa-sliders-h"></i> Paramètres</a></li>
         </ul>
     </div>
