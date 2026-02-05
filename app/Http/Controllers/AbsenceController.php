@@ -178,14 +178,6 @@ class AbsenceController extends Controller
 
     /* **************************************************************************** */
    
-    public function demande()
-    {
-        return view('admin.demande');
-    }
-    public function suivi_demande()
-    {
-        return view('admin.suivi_demande');
-    }
     public function notes()
     {
         return view('admin.notes');

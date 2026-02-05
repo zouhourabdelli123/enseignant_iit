@@ -93,31 +93,30 @@
         fileUploadArea.addEventListener('drop', (e) => {
             e.preventDefault();
             fileUploadArea.classList.remove('dragover');
-            handleFiles(e.dataTransfer.files);
+            handleFiles([e.dataTransfer.files[0]]);
         });
 
+
         async function handleFiles(files) {
-            const newFiles = Array.from(files);
+            const file = files[0];
 
-            // Validate file sizes (max 10MB)
-            const maxSize = 10 * 1024 * 1024; // 10MB
-            const oversizedFiles = newFiles.filter(file => file.size > maxSize);
+            if (!file) return;
 
-            if (oversizedFiles.length > 0) {
-                alert(
-                    `Certains fichiers dépassent la taille maximale de 10MB:\n${oversizedFiles.map(f => f.name).join('\n')}`);
-                newFiles = newFiles.filter(file => file.size <= maxSize);
+            const maxSize = 10 * 1024 * 1024;
+            if (file.size > maxSize) {
+                alert(`Le fichier dépasse la taille maximale de 10MB`);
+                return;
             }
 
-            // Simulate upload progress
-            for (const file of newFiles) {
-                await simulateUpload(file);
-            }
+            selectedFiles = [];
+            selectedFilesContainer.innerHTML = '';
 
-            selectedFiles = [...selectedFiles, ...newFiles];
-            displayFiles();
+            await simulateUpload(file);
+
+            selectedFiles = [file];
             updateFileInput();
         }
+
 
         function simulateUpload(file) {
             return new Promise(resolve => {
@@ -201,9 +200,12 @@
 
         function updateFileInput() {
             const dataTransfer = new DataTransfer();
-            selectedFiles.forEach(file => dataTransfer.items.add(file));
+            if (selectedFiles[0]) {
+                dataTransfer.items.add(selectedFiles[0]);
+            }
             fileInput.files = dataTransfer.files;
         }
+
 
         function formatFileSize(bytes) {
             if (bytes === 0) return '0 Bytes';
@@ -214,7 +216,7 @@
         }
 
         // Form validation and submission
-        document.getElementById('requestForm').addEventListener('submit', async function(e) {
+        document.getElementById('requestForm').addEventListener('submit', async function (e) {
             e.preventDefault();
 
             // Update TinyMCE content

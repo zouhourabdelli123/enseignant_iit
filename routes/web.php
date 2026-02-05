@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AbsenceController;
+use App\Http\Controllers\DemandesController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -29,14 +30,19 @@ route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/documents/add', [AbsenceController::class, 'add_document'])->name('documents.add');
     Route::get('/historique-presences', [AbsenceController::class, 'historique_presences'])->name('historique_presences.index');
     Route::get('/afficher-presences-etudiants/{id}', [AbsenceController::class, 'afficher_presences_etudiants'])->name('afficher_presences_etudiants');
-
 });
 
 route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/liste_classe', [AbsenceController::class, 'listeClasse'])->name('affiche_liste_classe');
     Route::get('/liste_classe_par_semester', [AbsenceController::class, 'classParSemester'])->name('affiche_liste_classe_par_semester');
+
+    /* absance */
     Route::post('/presences_etudiants', [AbsenceController::class, 'pagePresance'])->name('affiche_presences_etudiants');
     Route::post('/valisez_presences_etudiants', [AbsenceController::class, 'validezPresance'])->name('valisez_presences');
 
+    /* demande */
+    Route::get('liste_demandes', [DemandesController::class, 'affichePage'])->name('afficher_liste_demandes');
+    Route::get('demande_ajout_demande', [DemandesController::class, 'pageAjoutDemande'])->name('afficher_ajout_demandes');
+    Route::post('ajout_demande', [DemandesController::class, 'ajoutDemande'])->name('ajout_demande_enseigniant');
 });
 require __DIR__ . '/auth.php';

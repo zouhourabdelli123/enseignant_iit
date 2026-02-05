@@ -39,15 +39,9 @@
                 </a>
             </li>
 
+            
             <li>
-                <a href="{{ route('demande.index') }}" class="{{ request()->routeIs('demande.*') ? 'active' : '' }}">
-                    <i class="fas fa-file-signature"></i>
-                    <span>Gestion des demandes</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="{{ route('suivi_demande.index') }}"
+                <a href="{{ route('afficher_liste_demandes') }}"
                     class="{{ request()->routeIs('suivi_demande.*') ? 'active' : '' }}">
                     <i class="fas fa-tasks"></i>
                     <span>Suivi demande</span>

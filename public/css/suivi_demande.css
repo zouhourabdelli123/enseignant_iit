@@ -49,6 +49,11 @@
     color: #28a745;
 }
 
+.status-badge.refused {
+    background-color: rgba(167, 40, 40, 0.1);
+    color: #a72828;
+}
+
 .status-badge.pending {
     background-color: rgba(255, 193, 7, 0.1);
     color: #d9a406;
