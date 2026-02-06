@@ -18,14 +18,15 @@ class AbsenceController extends Controller
 {
     public function listeClasse()
     {
-        return view('listeClasse');
+        $type='absances';
+        return view('listeClasse',compact('type'));
     }
 
     public function classParSemester(Request $request)
     {
         $annee = CursusEtudiant::max('annee');
         session(['annee' => $annee]);
-
+        
         $classes = Enseignements::select('groupe', 'id_specialite', 'id_niveau', 'id_matiere')
             ->with("specialite", "matiere", "niveau")
             ->where("annee", $annee)
@@ -177,15 +178,6 @@ class AbsenceController extends Controller
     }
 
     /* **************************************************************************** */
-   
-    public function notes()
-    {
-        return view('admin.notes');
-    }
-    public function index_notes()
-    {
-        return view('admin.notes_index');
-    }
 
     public function message()
     {

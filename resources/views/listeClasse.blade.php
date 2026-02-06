@@ -171,8 +171,12 @@
             </form>
         </div>
     </div>
+    <input id="type_page" hidden value="{{ $type }}">
+
+
     <script src="{{ asset('js/script_liste_classe.js') }}"></script>
     <script>
         const filterClasseRoute = "{{ route('affiche_liste_classe_par_semester') }}";
+        const listeEtudiantRoute = "{{ route('affiche_liste_etudiants') }}";
     </script>
 @endsection

@@ -19,7 +19,7 @@
     <script src="{{ asset('js/common_datatables.js') }}"></script>
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <link rel="stylesheet" href="{{ asset('css/style_dashboard.css') }}">
 
@@ -27,5 +27,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>

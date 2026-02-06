@@ -49,7 +49,7 @@
             </li>
 
             <li>
-                <a href="{{ route('notes.index') }}" class="{{ request()->routeIs('notes.*') ? 'active' : '' }}">
+                <a href="{{ route('afficher_liste_evaluations') }}" class="{{ request()->routeIs('notes.*') ? 'active' : '' }}">
                     <i class="fas fa-clipboard-list"></i>
                     <span>Notes</span>
                 </a>

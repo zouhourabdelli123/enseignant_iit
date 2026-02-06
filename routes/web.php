@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AbsenceController;
 use App\Http\Controllers\DemandesController;
+use App\Http\Controllers\NotesController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -21,10 +22,6 @@ Route::middleware('auth')->group(function () {
 });
 
 route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/demande', [AbsenceController::class, 'demande'])->name('demande.index');
-    Route::get('/suivi_demande', [AbsenceController::class, 'suivi_demande'])->name('suivi_demande.index');
-    Route::get('/notes', [AbsenceController::class, 'notes'])->name('notes.index');
-    Route::get('/index_notes', [AbsenceController::class, 'index_notes'])->name('index_notes.index');
     Route::get('/message', [AbsenceController::class, 'message'])->name('message.index');
     Route::get('/documents', [AbsenceController::class, 'documents'])->name('documents.index');
     Route::get('/documents/add', [AbsenceController::class, 'add_document'])->name('documents.add');
@@ -44,5 +41,12 @@ route::middleware(['auth', 'verified'])->group(function () {
     Route::get('liste_demandes', [DemandesController::class, 'affichePage'])->name('afficher_liste_demandes');
     Route::get('demande_ajout_demande', [DemandesController::class, 'pageAjoutDemande'])->name('afficher_ajout_demandes');
     Route::post('ajout_demande', [DemandesController::class, 'ajoutDemande'])->name('ajout_demande_enseigniant');
+
+    /* notes */
+    Route::get('liste_evaluations', [NotesController::class, 'typeEvaluation'])->name('afficher_liste_evaluations');
+    Route::get('liste_classes/{type_evaliuation}', [NotesController::class, 'listeClasse'])->name('affiche_liste_classes');
+    Route::post('liste_etudiants', [NotesController::class, 'listeNotes'])->name('affiche_liste_etudiants');
+    Route::post('affecter_notes', [NotesController::class, 'affecterNotes'])->name('affecter_notes_etudiants');
+
 });
 require __DIR__ . '/auth.php';

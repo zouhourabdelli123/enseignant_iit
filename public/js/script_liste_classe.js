@@ -49,16 +49,17 @@ function confirmSemester() {
             const container = document.getElementById("classesContainer");
             container.innerHTML = '';
 
+            let type_page = document.getElementById('type_page').value;
+            let csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
             data.forEach(item => {
                 let group = item.groupe;
                 let niveau = item.niveau.nom;
                 let specialite = item.specialite.specialite_en_francais;
                 let matiere = item.matiere.nom;
 
-                let card = `
-                    <div class="class-card"
-                        onclick="openSessionModal('${item.id_specialite}', ${item.id_niveau},${group},  ${item.id_matiere})">
 
+                let cardInner = `
                         <div class="card-header">
                             <div class="card-badge">G${group}</div>
                             <div class="card-icon">
@@ -90,12 +91,35 @@ function confirmSemester() {
                                 <span class="meta-value" id="semesterValue${group}">${selectedSemester}</span>
                             </div>
                         </div>
-                    </div>
-                `;
+                    `;
 
+                let card = '';
+
+                if (type_page === 'absances') {
+                    card = `
+                        <div class="class-card"
+                            onclick="openSessionModal('${item.id_specialite}', ${item.id_niveau}, ${group}, ${item.id_matiere})">
+                            ${cardInner}
+                        </div>
+                    `;
+                } else if (type_page === 'notes') {
+                    card = `
+                        <form method="POST" action="${listeEtudiantRoute}">
+                            <input type="hidden" name="_token" value="${csrfToken}">
+                            <div class="class-card" onclick="this.closest('form').submit()">
+                                ${cardInner}
+
+                                <input name="id_specialite" type="hidden" value="${item.id_specialite}">
+                                <input name="id_niveau" type="hidden" value="${item.id_niveau}">
+                                <input name="group" type="hidden" value="${group}">
+                                <input name="id_matiere" type="hidden" value="${item.id_matiere}">
+                                <input name="semester" type="hidden" value="${selectedSemester}">
+                            </div>
+                        </form>
+                    `;
+                }
                 container.insertAdjacentHTML("beforeend", card);
             });
-
         },
         error: function (xhr, status, error) {
             console.error(xhr.responseText);
