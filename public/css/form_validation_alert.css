@@ -1,0 +1,52 @@
+/* Modern Alert Styling for Form Validation */
+#danger-alert {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#danger-alert .alert-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    color: #991b1b;
+    font-weight: 600;
+}
+
+#danger-alert .alert-header i {
+    font-size: 1.1rem;
+}
+
+#danger-alert .error-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#danger-alert .error-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    color: #7f1d1d;
+    font-size: 0.9rem;
+}
+
+#danger-alert .error-icon {
+    font-size: 1rem;
+}

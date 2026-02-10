@@ -68,6 +68,48 @@
     margin-top: 2rem;
 }
 
+/* Custom SweetAlert Styling */
+.swal-popup-custom {
+    border-radius: 20px !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}
+
+.swal-title-custom {
+    color: #1e293b !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    padding-bottom: 0 !important;
+}
+
+.swal-confirm-btn-custom {
+    padding: 0.875rem 2rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2) !important;
+    transition: all 0.2s !important;
+}
+
+.swal-confirm-btn-custom:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3) !important;
+}
+
+.swal2-input:focus {
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1) !important;
+    border-color: #6366f1 !important;
+}
+
+/* Hide default swal validation error to use our logic */
+.swal2-validation-message {
+    background: #fef2f2 !important;
+    color: #ef4444 !important;
+    font-weight: 500 !important;
+    padding: 0.75rem !important;
+    border-radius: 8px !important;
+    margin-top: 1rem !important;
+}
+
 .hidden {
     display: none !important;
 }

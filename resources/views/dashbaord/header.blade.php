@@ -38,18 +38,8 @@
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                    <i class="fas fa-user"></i>
-                    <span>Mon Profil</span>
-                </a>
-                <a href="#" class="dropdown-item">
-                    <i class="fas fa-cog"></i>
-                    <span>Parametres</span>
-                </a>
-                <a href="#" class="dropdown-item">
-                    <i class="fas fa-bell"></i>
-                    <span>Notifications</span>
-                </a>
+          
+             
                 <div class="dropdown-divider"></div>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

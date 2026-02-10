@@ -153,35 +153,52 @@ function closeSessionModal() {
 }
 
 function validateSession() {
-    msg = '';
-    find = 0;
-    msgerr = document.getElementById("danger-alert");
-    sessionDate = document.getElementById('sessionDate').value;
-    sessionDuration = document.getElementById("sessionDuration").value;
-    sessionType = document.getElementById("sessionType").value;
-    type_seance = document.getElementById("type_seance").value;
+    const sessionDate = document.getElementById('sessionDate').value;
+    const sessionDuration = document.getElementById("sessionDuration").value;
+    const sessionType = document.getElementById("sessionType").value;
+    const type_seance = document.getElementById("type_seance").value;
 
-    if (sessionDate == '') {
-        msg = msg + "- Vous devez choisir la date!</br>";
-        find = 1;
+    let errors = [];
+
+    if (sessionDate === '') {
+        errors.push({ icon: '📅', text: 'Date et heure' });
     }
-    if (sessionDuration == '') {
-        msg = msg + "- Vous devez choisir la durée!</br>";
-        find = 1;
+    if (sessionDuration === '') {
+        errors.push({ icon: '⏱️', text: 'Durée' });
     }
-    if (sessionType == '') {
-        msg = msg + "- Vous devez choisir le type du cours!</br>";
-        find = 1;
+    if (sessionType === '') {
+        errors.push({ icon: '📚', text: 'Type de cours' });
     }
-    if (type_seance == '') {
-        msg = msg + "- Vous devez choisir une séance!</br>";
-        find = 1;
+    if (type_seance === '') {
+        errors.push({ icon: '🎯', text: 'Type de séance' });
     }
 
-    if (find == 0) {
+    if (errors.length === 0) {
         document.getElementById('sessionForm').submit();
     } else {
+        const msgerr = document.getElementById("danger-alert");
+        let errorHtml = `
+            <div class="alert-header">
+                <i class="fas fa-exclamation-circle"></i>
+                <span>Veuillez remplir :</span>
+            </div>
+            <ul class="error-list">
+                ${errors.map(error => `
+                    <li class="error-item">
+                        <span class="error-icon">${error.icon}</span>
+                        <span class="error-text">${error.text}</span>
+                    </li>
+                `).join('')}
+            </ul>
+        `;
+        msgerr.innerHTML = errorHtml;
         msgerr.style.display = "block";
-        msgerr.innerHTML = msg;
+        
+        // Scroll modal to top to show alert
+        const modalBox = document.querySelector('#sessionModal .modal-box');
+        if (modalBox) {
+            modalBox.scrollTop = 0;
+        }
     }
 }
+
