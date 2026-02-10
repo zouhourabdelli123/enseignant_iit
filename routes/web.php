@@ -5,6 +5,7 @@ use App\Http\Controllers\AbsenceController;
 use App\Http\Controllers\DemandesController;
 use App\Http\Controllers\NotesController;
 use App\Http\Controllers\DocumentsDemandesController;
+use App\Http\Controllers\PresancesController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -25,8 +26,6 @@ Route::middleware('auth')->group(function () {
 
 route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/message', [AbsenceController::class, 'message'])->name('message.index');
-    Route::get('/historique-presences', [AbsenceController::class, 'historique_presences'])->name('historique_presences.index');
-    Route::get('/afficher-presences-etudiants/{id}', [AbsenceController::class, 'afficher_presences_etudiants'])->name('afficher_presences_etudiants');
 });
 
 route::middleware(['auth', 'verified'])->group(function () {
@@ -52,6 +51,13 @@ route::middleware(['auth', 'verified'])->group(function () {
     Route::get('liste_documents', [DocumentsDemandesController::class, 'affichePagesDemandes'])->name('afficher_liste_documents');
     Route::get('ajout_demande_document', [DocumentsDemandesController::class, 'ajoutDemandePage'])->name('page_ajout_demande_document');
     Route::post('ajout_document', [DocumentsDemandesController::class, 'ajoutDemandeDocument'])->name('ajout_demande_document');
+
+
+    /* historique presance */
+    Route::get('liste_presance', [PresancesController::class, 'affichePage'])->name('afficher_liste_presance');
+    Route::get('affiche_presance', [PresancesController::class, 'affichePresance'])->name('filtere_liste_presance');
+    Route::get('affiche_presance_etudiant/{date_debut}/{id_matiere}', [PresancesController::class, 'affichePresanceEtudiant'])->name('affiche_liste_presance_etudiant');
+
 
     Route::get('telecharger_document/{name_document}', [DocumentsDemandesController::class, 'downloadPdf'])->name('telecharger_document_bureau');
 });

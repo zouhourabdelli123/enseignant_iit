@@ -26,4 +26,10 @@ class Absences extends Model
         return $this->belongsTo(Matieres::class, "id_matiere")
             ->select('id', 'nom');
     }
+
+    public function etudiant()
+    {
+        return $this->belongsTo(Etudiants::class, "code_etudiant", "code_etudiant")
+            ->select('code_etudiant', 'nom', 'prenom');
+    }
 }

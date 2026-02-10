@@ -31,21 +31,24 @@
             </li>
 
             <li>
-                <a href="{{ route('affiche_liste_classe') }}" class="{{ request()->routeIs('absences.*') ? 'active' : '' }}">
+                <a href="{{ route('affiche_liste_classe') }}"
+                    class="{{ request()->routeIs('absences.*') ? 'active' : '' }}">
                     <i class="fas fa-user-clock"></i>
                     <span>Gestion des absences</span>
                 </a>
             </li>
 
             <li>
-                <a href="{{ route('afficher_liste_demandes') }}" class="{{ request()->routeIs('suivi_demande.*') ? 'active' : '' }}">
+                <a href="{{ route('afficher_liste_demandes') }}"
+                    class="{{ request()->routeIs('suivi_demande.*') ? 'active' : '' }}">
                     <i class="fas fa-tasks"></i>
                     <span>Suivi des demandes</span>
                 </a>
             </li>
 
             <li>
-                <a href="{{ route('afficher_liste_evaluations') }}" class="{{ request()->routeIs('notes.*') ? 'active' : '' }}">
+                <a href="{{ route('afficher_liste_evaluations') }}"
+                    class="{{ request()->routeIs('notes.*') ? 'active' : '' }}">
                     <i class="fas fa-clipboard-list"></i>
                     <span>Notes</span>
                 </a>
@@ -62,21 +65,17 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('afficher_liste_documents') }}" class="{{ request()->routeIs('documents.*') ? 'active' : '' }}">
+                <a href="{{ route('afficher_liste_documents') }}"
+                    class="{{ request()->routeIs('documents.*') ? 'active' : '' }}">
                     <i class="fas fa-folder-open"></i>
                     <span>Documents</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('historique_presences.index') }}" class="{{ request()->routeIs('historique_presences.*') ? 'active' : '' }}">
+                <a href="{{ route('afficher_liste_presance') }}"
+                    class="{{ request()->routeIs('historique_presences.*') ? 'active' : '' }}">
                     <i class="fas fa-history"></i>
-                    <span>Historique presences</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-sliders-h"></i>
-                    <span>Parametres</span>
+                    <span>Historique Présences</span>
                 </a>
             </li>
         </ul>

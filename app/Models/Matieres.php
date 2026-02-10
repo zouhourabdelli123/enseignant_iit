@@ -23,4 +23,10 @@ class Matieres extends Model
         'coefficient_test',
         'id_module',
     ];
+
+    public function module()
+    {
+        return $this->belongsTo(Modules::class, "id_module")
+            ->select('id', 'nom');
+    }
 }
