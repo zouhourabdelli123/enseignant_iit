@@ -20,7 +20,7 @@
     </div>
 
     <div class="header-right">
-      
+
 
         <div class="user-profile" id="userProfile">
             <div class="user-avatar">AB</div>
@@ -62,31 +62,3 @@
         </div>
     </div>
 </header>
-
-<script>
-    // User dropdown toggle
-    (function () {
-        const userProfile = document.getElementById('userProfile');
-        const userDropdown = document.getElementById('userDropdown');
-
-        if (userProfile && userDropdown) {
-            userProfile.addEventListener('click', function (e) {
-                e.stopPropagation();
-                userDropdown.classList.toggle('show');
-                console.log('Dropdown toggled:', userDropdown.classList.contains('show'));
-            });
-
-            document.addEventListener('click', function (e) {
-                if (!userProfile.contains(e.target)) {
-                    userDropdown.classList.remove('show');
-                }
-            });
-
-            userDropdown.addEventListener('click', function (e) {
-                e.stopPropagation();
-            });
-        } else {
-            console.error('User profile or dropdown not found');
-        }
-    })();
-</script>

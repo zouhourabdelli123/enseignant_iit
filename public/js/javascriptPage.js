@@ -277,27 +277,4 @@
             showToast('Retour à l\'accueil', 'info');
         }); */
 
-        // Gestionnaire de clic pour le profil utilisateur - Dropdown toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const userProfile = document.getElementById('userProfile');
-            const userDropdown = document.getElementById('userDropdown');
 
-            if (userProfile && userDropdown) {
-                userProfile.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    userDropdown.classList.toggle('show');
-                });
-
-                // Fermer le dropdown si on clique en dehors
-                document.addEventListener('click', function(e) {
-                    if (!userProfile.contains(e.target)) {
-                        userDropdown.classList.remove('show');
-                    }
-                });
-
-                // Empêcher la fermeture lors du clic sur le dropdown lui-même
-                userDropdown.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
-            }
-        });

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ asset('css/style_dashboard.css') }}">
 
     <script src="{{ asset('js/dashboard_script.js') }}"></script>
+    <script src="{{ asset('js/header.js') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
