@@ -1,6 +1,6 @@
 
 
-let dataTable;
+
 
 function afficherHistorique() {
     const annee = document.getElementById('anneeSelect').value;

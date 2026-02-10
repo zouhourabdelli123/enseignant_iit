@@ -6,21 +6,21 @@
             </div>
             <div class="sidebar-logo-text">
                 <h2>IIT Enseignant</h2>
+                <p>Espace professeur</p>
             </div>
         </div>
 
         <div class="teacher-status">
             <span class="status-dot"></span>
             <div class="status-text">
-                <span>Connecté</span>
-                <small>· Dernière activité : <span id="lastActivity">08:45</span></small>
+                <span>Connecte</span>
+                <small>Derniere activite : <span id="lastActivity">08:45</span></small>
             </div>
         </div>
     </div>
 
-    <!-- NAVIGATION -->
     <div class="nav-container">
-        <p class="nav-title">Navigation Principale</p>
+        <p class="nav-title">Navigation principale</p>
 
         <ul class="nav-links">
             <li>
@@ -31,20 +31,16 @@
             </li>
 
             <li>
-
-                <a href="{{ route('affiche_liste_classe') }}"
-                    class="{{ request()->routeIs('absences.*') ? 'active' : '' }}">
+                <a href="{{ route('affiche_liste_classe') }}" class="{{ request()->routeIs('absences.*') ? 'active' : '' }}">
                     <i class="fas fa-user-clock"></i>
-                    <span>Gestion des Absences </span>
+                    <span>Gestion des absences</span>
                 </a>
             </li>
 
-            
             <li>
-                <a href="{{ route('afficher_liste_demandes') }}"
-                    class="{{ request()->routeIs('suivi_demande.*') ? 'active' : '' }}">
+                <a href="{{ route('afficher_liste_demandes') }}" class="{{ request()->routeIs('suivi_demande.*') ? 'active' : '' }}">
                     <i class="fas fa-tasks"></i>
-                    <span>Suivi demande</span>
+                    <span>Suivi des demandes</span>
                 </a>
             </li>
 
@@ -54,13 +50,11 @@
                     <span>Notes</span>
                 </a>
             </li>
-
         </ul>
 
         <p class="nav-title">Gestion</p>
 
         <ul class="nav-links">
-
             <li>
                 <a href="{{ route('message.index') }}" class="{{ request()->routeIs('message.*') ? 'active' : '' }}">
                     <i class="fas fa-comment-dots"></i>
@@ -68,24 +62,26 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('afficher_liste_documents') }}"
-                    class="{{ request()->routeIs('documents.*') ? 'active' : '' }}">
+                <a href="{{ route('afficher_liste_documents') }}" class="{{ request()->routeIs('documents.*') ? 'active' : '' }}">
                     <i class="fas fa-folder-open"></i>
                     <span>Documents</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('historique_presences.index') }}"
-                    class="{{ request()->routeIs('historique_presences.*') ? 'active' : '' }}">
+                <a href="{{ route('historique_presences.index') }}" class="{{ request()->routeIs('historique_presences.*') ? 'active' : '' }}">
                     <i class="fas fa-history"></i>
-                    <span>Historique Présences</span>
+                    <span>Historique presences</span>
                 </a>
             </li>
-            <li><a href="#"><i class="fas fa-sliders-h"></i> Paramètres</a></li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>Parametres</span>
+                </a>
+            </li>
         </ul>
     </div>
 
-    <!-- FOOTER -->
     <div class="sidebar-footer">
         <i class="fas fa-headset"></i>
         <div>

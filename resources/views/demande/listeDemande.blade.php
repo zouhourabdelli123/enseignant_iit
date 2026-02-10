@@ -10,17 +10,19 @@
                 <h2 class="page-title">Suivi des demandes</h2>
                 <p class="page-subtitle">Gérez les demandes des enseignants</p>
             </div>
+            <div class="header-actions">
+                <a class="semester-selector-btn action-btn" href="{{ route('afficher_ajout_demandes') }}">
+                    <i class="fas fa-plus"></i>
+                    <span id="currentSemesterDisplay">Ajouter une demande</span>
+                </a>
+            </div>
         </div>
 
         <div class="table-card">
             <div class="table-card-header">
                 <h3 class="table-title">Liste de demandes</h3>
             </div>
-            <a class="semester-selector-btn" href="{{ route('afficher_ajout_demandes') }}">
-                <span id="currentSemesterDisplay">Ajouter une demande</span>
-            </a>
-
-            <table id="suiviTable" class="display" style="width:100%">
+            <table id="suiviTable" class="display" style="width:100%" data-page-length="7">
                 <thead>
                     <tr>
                         <th>Titre</th>

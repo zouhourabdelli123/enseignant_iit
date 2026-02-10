@@ -9,8 +9,9 @@ use App\Http\Controllers\DocumentsDemandesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('auth.login');
+})->middleware('guest');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
